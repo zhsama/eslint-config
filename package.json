@@ -1,5 +1,5 @@
 {
-  "name": "@zhconfig/eslint-config",
+  "name": "@zhsama/eslint-config",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
