@@ -1,0 +1,49 @@
+{
+  "name": "@zhconfig/eslint-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c",
+    "debug": "eslint --debug",
+    "inspector": "eslint --inspect-config",
+    "gen vue-rules": "esno scripts/gen-vue-rules.ts"
+  },
+  "keywords": [],
+  "author": "zhcf1ess",
+  "license": "MIT",
+  "dependencies": {
+    "@eslint-react/eslint-plugin": "^1.5.16",
+    "@eslint/compat": "^1.1.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@stylistic/eslint-plugin": "^2.2.1",
+    "@types/node": "^20.14.5",
+    "eslint-plugin-jsonc": "^2.16.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "local-pkg": "^0.5.0",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "globals": "^15.6.0",
+    "typescript-eslint": "^7.13.1"
+  }
+}
