@@ -2,6 +2,8 @@ import { defineConfig } from 'rollup'
 import dts from 'rollup-plugin-dts'
 import commonjs from '@rollup/plugin-commonjs'
 import ts from 'rollup-plugin-typescript2'
+import resolve from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
 
 const config = defineConfig([
   {
@@ -12,11 +14,14 @@ const config = defineConfig([
         format: 'esm',
       },
       {
+        // dir: 'dist/cjs',
         file: 'dist/index.cjs',
         format: 'cjs',
       },
     ],
     plugins: [
+      json(),
+      resolve(),
       ts(),
       commonjs(),
     ],
