@@ -4,7 +4,7 @@ eslint-config
 
 ## usage
 ```shell
-pnpm i @taiyuuki/eslint-config -D
+pnpm i @zhsama/eslint-config -D
 ```
 
 ```ts
