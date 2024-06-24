@@ -1,9 +1,20 @@
-import { defineConfig } from 'rollup'
+import {defineConfig} from 'rollup'
 import dts from 'rollup-plugin-dts'
 import commonjs from '@rollup/plugin-commonjs'
 import ts from 'rollup-plugin-typescript2'
-import resolve from '@rollup/plugin-node-resolve';
-import json from '@rollup/plugin-json';
+import {createRequire} from 'node:module'
+
+const require = createRequire(import.meta.url);
+console.log(import.meta.url)
+const pkg = require('./package.json');
+
+function resolveExternal() {
+  return [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+    ...['path', 'url'],
+  ]
+}
 
 const config = defineConfig([
   {
@@ -14,14 +25,12 @@ const config = defineConfig([
         format: 'esm',
       },
       {
-        // dir: 'dist/cjs',
         file: 'dist/index.cjs',
         format: 'cjs',
       },
     ],
+    external: resolveExternal(),
     plugins: [
-      json(),
-      resolve(),
       ts(),
       commonjs(),
     ],
