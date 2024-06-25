@@ -8,7 +8,7 @@ pnpm i @zhsama/eslint-config -D
 ```
 
 ```ts
-// eslint.config.mjs
+// eslint.config.js
 import eslint_config from '@zhsama/eslint-config'
 
 export default eslint_config({
