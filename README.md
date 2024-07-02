@@ -12,7 +12,7 @@ pnpm i @zhsama/eslint-config -D
 import eslint_config from '@zhsama/eslint-config'
 
 export default eslint_config({
-    indent: 2, // default 4
+    indent: 4, // default 2
     ts: true, // default false
     vue: true, // default false
     markdown: false, // default true

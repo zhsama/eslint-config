@@ -1,3 +1,34 @@
+declare module 'eslint-plugin-react-hooks' {
+    import type { Linter } from 'eslint'
+
+    const eslint_plugin_react: {
+        configs: {
+            'recommended': Linter.FlatConfig<Linter.RulesRecord>;
+        }
+        rules: Linter.RulesRecord
+        meta: {
+            name: string,
+            version: string,
+        }
+    }
+    export default eslint_plugin_react
+}
+
+declare module 'eslint-plugin-react-refresh' {
+    import type { Linter } from 'eslint'
+
+    const eslint_plugin_react: {
+        configs: {
+            'recommended': Linter.FlatConfig<Linter.RulesRecord>;
+        }
+        rules: Linter.RulesRecord
+        meta: {
+            name: string,
+            version: string,
+        }
+    }
+    export default eslint_plugin_react
+}
 
 declare module 'eslint-plugin-vue' {
     import type { Linter } from 'eslint'

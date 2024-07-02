@@ -17,6 +17,7 @@ interface ZHConfig {
     indent?: number
     ts?: boolean
     vue?: boolean
+    react?: boolean
     markdown?: boolean
     json?: boolean
     ignores?: string[]
@@ -24,8 +25,8 @@ interface ZHConfig {
     rules?: Linter.RulesRecord
 }
 
-export default async function (tyk_config?: ZHConfig, ...rest: Linter.FlatConfig[]) {
-    const config = Object.assign({jsdoc: true, json: true, markdown: true}, tyk_config)
+export default async function (zcf_config?: ZHConfig, ...rest: Linter.FlatConfig[]) {
+    const config = Object.assign({jsdoc: true, json: true, markdown: true}, zcf_config)
     const eslint_config: Linter.FlatConfig[] = []
 
     // ignores
@@ -182,10 +183,18 @@ export default async function (tyk_config?: ZHConfig, ...rest: Linter.FlatConfig
             files: ['**/*.vue'],
             rules: Object.assign({}, vue_stylistic, vue_rules),
         })
+    }
 
-        // react
+    // react
+    if (config?.react) {
+        const react_eslint_hooks = await import('eslint-plugin-react-hooks')
+        eslint_config.push(...react_eslint_hooks.default.configs['recommended'] as Linter.FlatConfig[])
+
+        const react_eslint_refresh = await import('eslint-plugin-react-refresh')
+        eslint_config.push(...react_eslint_refresh.default.configs['recommended'] as Linter.FlatConfig[])
+
         eslint_config.push({
-            files: ['**/*.jsx'],
+            files: ['**/*.jsx', '**/*.tsx'],
             rules: Object.assign({}, react_rules),
         })
     }

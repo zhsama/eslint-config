@@ -18,7 +18,7 @@ export default {
     'prefer-const': ['error', { destructuring: 'all' }],
     'prefer-template': ['error'],
     'no-lonely-if': ['error'],
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    // 'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-implied-eval': ['error'],
     'eqeqeq': ['error', 'always', { null: 'ignore' }],
     'default-case-last': ['error'],

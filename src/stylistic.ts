@@ -15,7 +15,7 @@ const stylistic_base = {
     'func-call-spacing': ['warn', 'never'],
     'function-call-argument-newline': ['warn', 'consistent'],
     'function-paren-newline': ['warn', 'multiline'],
-    'indent': ['warn', 4],
+    'indent': ['warn', 2],
     'key-spacing': ['warn', { beforeColon: false, afterColon: true }],
     'lines-around-comment': ['warn', { beforeBlockComment: true, beforeLineComment: true }],
     'lines-between-class-members': ['warn', {
@@ -55,7 +55,7 @@ const stylistic_base = {
     'template-curly-spacing': ['warn', 'never'],
     'template-tag-spacing': ['warn', 'never'],
     'type-annotation-spacing': ['warn', { before: false, after: true }],
-    'indent-binary-ops': ['warn', 4],
+    'indent-binary-ops': ['warn', 2],
     'type-generic-spacing': ['warn'],
     'type-named-tuple-spacing': ['warn'],
 }
